@@ -58,5 +58,7 @@ class PersonModel extends PersonEntity {
       'episode': episode,
       'created': created.toIso8601String(),
     };
+
+    //!   8 lesson is over 9 lesson will start tomorrow
   }
 }
