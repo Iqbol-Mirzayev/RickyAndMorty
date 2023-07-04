@@ -23,10 +23,12 @@ class PersonLocalDataSourceImpl implements PersonLocalDataSource {
   PersonLocalDataSourceImpl({required this.sharedPreferences});
   @override
   Future<List<PersonModel>> getLastPersonsFromCache() {
-    final  jsonPersonList = sharedPreferences.getStringList(CACHED_PERSON_LIST);
-    if (jsonPersonList != null ) {
-      return Future.value(jsonPersonList.map((person) => PersonModel.fromJson(json.decode(person))).toList());
-    }else{
+    final jsonPersonList = sharedPreferences.getStringList(CACHED_PERSON_LIST);
+    if (jsonPersonList != null) {
+      return Future.value(jsonPersonList
+          .map((person) => PersonModel.fromJson(json.decode(person)))
+          .toList());
+    } else {
       throw CacheException();
     }
   }
@@ -36,7 +38,7 @@ class PersonLocalDataSourceImpl implements PersonLocalDataSource {
     final List<String> jsonPersonsList =
         persons.map((person) => json.encode(person.toJson())).toList();
     sharedPreferences.setStringList(CACHED_PERSON_LIST, jsonPersonsList);
-   print("Persons to write  Cache:  ${jsonPersonsList.length}") 
+    print("Persons to write  Cache:  ${jsonPersonsList.length}");
     return Future.value(jsonPersonsList);
   }
 }
