@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:meta/meta.dart';
 
 class PersonEntity extends Equatable {
   final String name;
@@ -14,7 +13,7 @@ class PersonEntity extends Equatable {
   final List<String> episode;
   final DateTime created;
 
-  PersonEntity({
+  const PersonEntity({
     required this.name,
     required this.id,
     required this.status,

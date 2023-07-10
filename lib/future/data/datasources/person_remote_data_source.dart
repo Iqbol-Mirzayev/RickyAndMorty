@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'package:ricky_and_morty/core/error/exception.dart';
 import 'package:ricky_and_morty/future/data/models/person_model.dart';
 import 'package:http/http.dart' as http;
-import 'package:meta/meta.dart';
 
 abstract class PersonRemoteDataSource {
   /// Call the https://rickandmortyapi.com/api/character/?page=1  endpoint
@@ -47,4 +46,3 @@ class PersonRemoteDataSourceImpl implements PersonRemoteDataSource {
     }
   }
 }
-//! 9 lesson is over 

@@ -1,9 +1,8 @@
 import 'package:ricky_and_morty/future/data/models/location_model.dart';
 import 'package:ricky_and_morty/future/domain/entities/person_entity.dart';
-import 'package:meta/meta.dart';
 
 class PersonModel extends PersonEntity {
-  PersonModel({
+  const PersonModel({
     required id,
     required name,
     required status,
@@ -59,6 +58,5 @@ class PersonModel extends PersonEntity {
       'created': created.toIso8601String(),
     };
 
-    //!   8 lesson is over 9 lesson will start tomorrow
   }
 }

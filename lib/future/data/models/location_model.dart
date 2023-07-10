@@ -1,4 +1,3 @@
-import 'package:equatable/equatable.dart';
 import 'package:ricky_and_morty/future/domain/entities/person_entity.dart';
 
 class LocationModel extends LocationEntity {

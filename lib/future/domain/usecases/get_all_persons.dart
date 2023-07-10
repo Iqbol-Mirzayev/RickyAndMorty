@@ -2,7 +2,6 @@ import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:ricky_and_morty/core/usecases/usecase.dart';
 import 'package:ricky_and_morty/future/domain/repositories/person_repository.dart';
-import 'package:meta/meta.dart';
 import '../../../core/error/failure.dart';
 import '../entities/person_entity.dart';
 
