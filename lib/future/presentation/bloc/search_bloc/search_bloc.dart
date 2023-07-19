@@ -2,11 +2,13 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:ricky_and_morty/core/error/failure.dart';
 import 'package:ricky_and_morty/future/domain/entities/person_entity.dart';
-
-import '../../../../domain/usecases/search_person.dart';
+import '../../../domain/usecases/search_person.dart';
 
 part 'search_event.dart';
 part 'search_state.dart';
+
+const SERVER_FAILURE_MESSAGE = 'Server Failure';
+const CACHED_FAILURE_MESSAGE = 'Cache Failure';
 
 class PersonSearchBloc extends Bloc<PersonSearchEvent, PersonSearchState> {
   final SearchPerson searchPerson;
@@ -33,9 +35,9 @@ class PersonSearchBloc extends Bloc<PersonSearchEvent, PersonSearchState> {
   String _mapFailureToMessage(Failure failure) {
     switch (failure.runtimeType) {
       case ServerFailure:
-        return 'Server Failure';
+        return SERVER_FAILURE_MESSAGE;
       case CacheFailure:
-        return 'Cache Failure';
+        return CACHED_FAILURE_MESSAGE;
       default:
         return 'UnExpected Error';
     }
